@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/the-malwas.ico' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-transparent">
+    <div id="nav-cont" class="container">
+      <div id="navlogo-id">
+        <a class="navbar-brand"  href="/"><img src="{% static 'images/the-malwas-logo-black-transparent.png' %}" alt="Logo" width="180vh" height="180vh" class="d-inline-block align-text-top"></a>
+      </div>
+
+      <div>
+      <a id="navbar-id" class="navbar-brand"  href="/">The Malwa's</a>
+      
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container">
+        {% block content %}
+        {% endblock %}
+  </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

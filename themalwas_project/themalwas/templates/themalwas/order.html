@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}The Malwa's - Order{% endblock %}
+{% block content %}
+    <div id="header1">
+        <span class="user" style="float: right;">
+            {% if request.user.is_authenticated %}
+                Hello {{ request.user.first_name|default:request.user.username }},
+                <a href='{% url "logout" %}'>Logout</a>
+            {% else %}
+                <a href='{% url "login" %}'>Log-in</a>
+            {% endif %}
+        </span>
+    </div>
+<div class="mx-auto">
+    <form method="POST" action="." enctype="multipart/form-data" class="order">
+        {% csrf_token %}
+        {{ order_form.name.errors }}
+        {{ order_form| crispy }}
+        <div class="order-btn mx-auto" style="text-align: center;">
+            <button type="submit" class="btn btn-dark">Submit Order</button>
+        </div>
+    </form>
+
+</div>
+{% endblock %}
+
