@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', default='DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'RENDER' not in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['themalwas.com', 'www.themalwas.com', '127.0.0.1']
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -90,6 +90,7 @@ WSGI_APPLICATION = 'themalwas_project.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'), engine='django_cockroachdb')
+    # 'default': dj_database_url.config(default=DATABASE_URL, engine='django_cockroachdb')
 }
 
 # Password validation
